@@ -1,2 +1,22 @@
 Hai Welcome to Git Hub Session
 by vinothkumar Selvaarasan
+findBy<AttributeName>(...)
+findBy<AttributeName>And<AttributeName>(...)
+findBy<AttributeName>Or<AttributeName>(...)
+findBy<AttributeName>OrderBy<AttributeName>Desc(...)
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+List<Employee> findByName(String name);  // Find by single attribute
+List<Employee> findByDepartment(String department);  // Find by another attribute
+List<Employee> findBySalaryGreaterThan(Double salary);  // Find by comparison
+List<Employee> findByNameAndAge(String name, Integer age);  // Find by multiple attributes
+List<Employee> findByDepartmentOrderBySalaryDesc(String department);  // Sort results
+List<Employee> findBySalaryGreaterThan(Double salary);
+List<Employee> findByAgeLessThan(Integer age);
+List<Employee> findBySalaryBetween(Double minSalary, Double maxSalary);
+List<Employee> findByNameLike(String name);
+long countByDepartment(String department);
+boolean existsByName(String name);
+List<Employee> findByNameAndAgeGreaterThanAndDepartmentOrderBySalaryDesc(String name, 
+Integer age, String department);
+void deleteBySalaryLessThan(Double salary);
+void deleteByName(String name);
